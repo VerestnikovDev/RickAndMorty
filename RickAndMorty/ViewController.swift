@@ -9,11 +9,19 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    @IBOutlet weak var textField: UITextField!
+
+    private let key = "CharacterName"
+    private let storage = UserDefaults()
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        let savedName = storage.string(forKey: key)
+        textField.text = savedName
     }
 
+    @IBAction func saveButtonTapped(_ sender: UIButton) {
+
+    }
 
 }
-
